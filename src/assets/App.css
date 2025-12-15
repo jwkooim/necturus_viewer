@@ -1,0 +1,312 @@
+@font-face {
+  font-family: 'Junicode';
+  src: local('Junicode'), url("./fonts/junicode-woff-1/Junicode.woff") format('woff');
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*Columns*/
+.container .row .col {
+  /*margin-bottom: 50px;*/
+
+}
+
+
+#validation-message {
+  /*display: inline-block;*/
+  padding-left: 2em;
+  margin-top: 0.5em;
+  background-color: #e2582266;
+  font-size: small;
+  font-family: Courier, serif;
+}
+
+.annotation {
+  /*max-height: 550px;*/
+  overflow-y: auto;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.react-transform-wrapper {
+  /*max-height: 550px;*/
+  /*overflow: scroll !important;*/
+  /*max-width: 100%;*/
+  transform-origin: top left;
+}
+
+.xml-container {
+  overflow-y: scroll;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 5px;
+  font-family: Junicode, serif;
+  font-size: large;
+}
+
+.placeholder {
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 0 3px;
+  margin-right: 5px;
+  font-family: Helvetica, serif;
+  background-color: #6bb89b;
+  opacity: 1;
+  cursor: auto;
+  /*cursor: grab;*/
+}
+
+/*.placeholder:active {*/
+/*  cursor: grabbing;*/
+/*}*/
+
+.cm-editor.cm-focused {
+  outline: none !important;
+}
+
+.container {
+  max-width: 100%;
+  margin-top: 0;
+}
+
+.layout {
+  margin-bottom: 80px;
+}
+
+
+
+
+
+.switcher {
+  display: inline-block;
+  padding: 2px;
+  background: #fff;
+  width: 150px;
+  border-radius: 30px;
+  border: solid 1px #ddd;
+  position: relative;
+}
+
+.switcher__input {
+  display: none;
+}
+
+.switcher__label {
+  float: left;
+  width: 50%;
+  font-size: 12px;
+  line-height: 20px;
+  color: #000;
+  text-align: center;
+  cursor: pointer;
+  position: inherit;
+  z-index: 10;
+  transition: color 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+  will-change: transform;
+}
+
+.switcher__toggle {
+  position: absolute;
+  float: left;
+  height: 20px;
+  width: 50%;
+  font-size: 12px;
+  line-height: 20px;
+  cursor: pointer;
+  background-color: black;
+  border-radius: 30px;
+  left: 2px;
+  top: 2px;
+  transition: left 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+  will-change: transform;
+}
+
+.switcher__input:checked + .switcher__label {
+  color: #fff;
+}
+
+.switcher__input--pan:checked ~ .switcher__toggle {
+  left: 72px;
+}
+
+.switcherxml__input {
+  display: none;
+}
+
+.switcherxml__input:checked + .switcher__label {
+  color: #fff;
+}
+
+.switcherxml__input--render:checked ~ .switcher__toggle {
+  left: 72px;
+}
+
+
+/*highlighting lines*/
+
+.highlighted {
+  background-color: #fff00065;
+  /*background-color: #5bb56e75;*/
+  position: relative;
+}
+
+.highlighted:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -10px; /* Adjust this value to change the position of the arrow */
+  transform: translateY(-50%) rotate(180deg); /* Rotate the arrow to point to the left */
+  border-width: 6px; /* Adjust this value to change the size of the arrow */
+  border-style: solid;
+  border-color: transparent black transparent transparent; /* Adjust this value to change the color of the arrow */
+}
+
+
+.a9s-annotation .a9s-inner {
+  stroke-width: 7px;
+}
+
+.a9s-annotation:hover .a9s-inner {
+  stroke-width: 7px;
+}
+
+.a9s-annotation.selected .a9s-inner, .a9s-selection .a9s-inner {
+  stroke-width: 10px;
+}
+
+.pagination {
+  position: fixed;
+  bottom: 40px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  width: fit-content; /* Adjust width based on content */
+  background-color: #f8f9fa; /* Light grey */
+  padding: 10px 20px;
+}
+
+.pagination ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination li {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.pagination button {
+  background-color: #666; /* Medium grey */
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  background-color: #444; /* Darker grey */
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination .active button {
+  background-color: #444; /* Darker grey */
+}
+
+.pagination .ellipsis {
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+
+.my-breadcrumb-container {
+  padding-top: 15px;
+  margin: 10px;
+}
+
+.search-column {
+  display: flex;
+  justify-content: right;
+  /*padding-right: 0.5rem;*/
+}
+
+.search-result-item {
+  font-family: Junicode, serif;
+}
+
+.clickable-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.clickable-item:hover {
+  background-color: #f8f9fa;
+}
+
+hi[type="match"] {
+  background-color: #fff00065;
+}
+
+
+.page-container {
+  padding-bottom: 80px; /* enough space to clear the fixed bottom navbar */
+}
+
+.flash {
+  animation: flashHighlight 0.6s ease-in-out;
+}
+
+@keyframes flashHighlight {
+  from {
+    background-color: #fff00065;
+  }
+  to {
+    background-color: transparent;
+  }
+}
+
+.dropdown-menu {
+  width: 300px !important; /* Or whatever fixed width you want */
+}
