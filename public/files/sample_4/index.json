@@ -1,0 +1,17 @@
+{
+  "rawDocs": [],
+  "index": {
+    "keys": [
+      {
+        "path": [
+          "text"
+        ],
+        "id": "text",
+        "weight": 1,
+        "src": "text",
+        "getFn": null
+      }
+    ],
+    "records": []
+  }
+}
