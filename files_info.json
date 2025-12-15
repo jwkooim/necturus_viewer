@@ -27,13 +27,5 @@
             "0012_KBR_1805-08_3v"
         ],
         "picturesAvailable": true
-    },
-    {
-        "path": "sample_3",
-        "name": "No Image Sample",
-        "pages": [
-            "xml_A"
-        ],
-        "picturesAvailable": false
     }
 ]
